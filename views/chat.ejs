@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Chat App</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="user">
+			<img src="/images/user-icon.png" class="user-icon" alt="">
+			<h1 class="user-name"><%= receiver %></h1>
+		</div>
+		<div class="message-container" data-sender="<%= sender %>" data-receiver="<%= receiver %>">
+			<% chat.messages.forEach(msg => { %>
+			<div class="<%= msg.sender.nameId == sender ? 'sent' : 'received' %>">
+				<%= msg.sender.nameId %>: <%= msg.message %>
+			</div>
+			<% }) %>
+		</div>
+		<form class="send-message-form" data-chat="<%= chat._id %>">
+			<input type="text" name="message" class="message-input">
+			<button type="submit" class="send-button">ارسال</button>
+		</form>
+	</div>
+	<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+		integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+		crossorigin="anonymous"></script>
+	<script src="/js/script.js"></script>
+
+</body>
+
+</html>

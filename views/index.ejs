@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="app-title">چتینو</h1>
+        <p>آی دی شما : <%= nameId %></p>
+        <div>
+            <form action="/chat" method="get">
+                <label for="receiver">آی دی مخاطب : </label>
+                <input type="text" name="receiver" class="nameid-input" placeholder="آی دی شخص مورد نظر خود را وارد کنید...">
+                <button type="submit" class="chat-btn">چت</button>
+            </form>
+        </div>
+        <% if(!chats.length) { %>
+            <p>شما هیچ چتی ندارید</p>
+        <% } else { %>
+            <p>مخاطبین شما : </p>
+            <div class="contacts">
+                <% chats.forEach(chat => { %>
+                    <% if(chat.users[0].nameId == nameId) { %>
+                        <div class="contact">
+                            <img src="/images/user-icon.png" alt="">
+                            <a href="/chat?receiver=<%= chat.users[1].nameId %>">
+                                <%= chat.users[1].nameId %>
+                            </a>
+                        </div>
+                    <% } else { %>
+                        <div class="contact">
+                            <img src="/images/user-icon.png" alt="">
+                            <a href="/chat?receiver=<%= chat.users[0].nameId %>">
+                                <%= chat.users[0].nameId %>
+                            </a>
+                        </div>
+                    <% } %>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+
+    <script>
+        document.cookie = `nameId=<%= nameId %>; path=/`
+    </script>
+</body>
+</html>

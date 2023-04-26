@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e9ecef;
+    font-family: Vazirmatn, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.app-title {
+    font-size: 26px;
+    color: #40c057;
+}
+
+.nameid-input {
+    border: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    outline: 0;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.chat-btn {
+    background: #2f9e44;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact { 
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.contact img {
+    width: 30px;
+    height: 30px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #1864ab;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.user-name {
+    font-size: 20px;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.message-input {
+    border: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    outline: 0;
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.send-button {
+    background: #2f9e44;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    outline: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+}
+
+.received {
+    width: 500px;
+    background-color: #74c0fc;
+    text-align: left;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.sent {
+    width: 500px;
+    background-color: white;
+    text-align: right;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
